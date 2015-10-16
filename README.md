@@ -32,7 +32,7 @@ sh build.sh
 ```bash
 netspeeder [模式] 网卡名 加速规则(bpf规则)
 
-	模式：auto(default), normal, cooked
+模式：auto(default), normal, cooked
 
 	在自动模式下，如果网卡名为venet*，会自动选择cooked模式
 	1. cooked模式适用于OpenVZ
