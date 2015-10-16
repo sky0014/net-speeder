@@ -43,6 +43,6 @@ Linux Cooked interface使用编译（venetX，OpenVZ）： sh build.sh -DCOOKED 
 
 使用方法(需要root权限启动）：
 
-参数：./net_speeder 网卡名 加速规则（bpf规则）
+参数：./netspeeder 网卡名 加速规则（bpf规则）
 
-最简单用法： # ./net_speeder venet0 "ip" 加速所有ip协议数据 
+最简单用法： # ./netspeeder venet0 "ip" 加速所有ip协议数据 

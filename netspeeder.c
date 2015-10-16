@@ -26,7 +26,7 @@ void print_usage(void);
 * print help text
 */
 void print_usage(void) {
-	printf("Usage: %s [interface][\"filter rule\"]\n", "net_speeder");
+	printf("Usage: %s [interface][\"filter rule\"]\n", "netspeeder");
 	printf("\n");
 	printf("Options:\n");
 	printf("    interface    Listen on <interface> for packets.\n");
