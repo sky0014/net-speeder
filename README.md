@@ -41,11 +41,11 @@ sh build.sh
 
 使用方法(需要root权限启动）：
 
-参数：./netspeeder [模式] 网卡名 加速规则（bpf规则）
+参数：netspeeder [模式] 网卡名 加速规则（bpf规则）
 
 模式可以为: auto(默认), normal, cooked
 
 在自动模式下，如果网卡名为venet*，会自动选择cooked模式。
 cooked模式适用于OpenVZ，normal适合其他电脑
 
-最简单用法（适用于OpenVZ）： # ./netspeeder venet0 "ip" 加速所有ip协议数据
+最简单用法（适用于OpenVZ）： # netspeeder venet0 "ip" 加速所有ip协议数据
