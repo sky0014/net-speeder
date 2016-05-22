@@ -44,12 +44,13 @@ void got_packet(u_char *args, const struct pcap_pkthdr *header, const u_char *pa
 
 	ip = (struct libnet_ipv4_hdr*)(packet + ethernet_h_len);
 
-	// if use tcp protocol && use 1723 port, so this pptp vpn
-	if (ip->ip_p == 6) {
-		struct libnet_tcp_hdr *tcp = (struct libnet_tcp_hdr*)(ip + 20);
-		if(tcp->th_sport == 1723 || tcp->th_dport == 1723)
-			return;
-	}
+        // if use tcp protocol && use 1723 port, so this pptp vpn
+        if (ip->ip_p == 6) {
+                struct libnet_tcp_hdr *tcp = (struct libnet_tcp_hdr*)(packet + ethernet_h_len + 20);	//ip + 20 I got null
+                if(tcp->th_sport == 1723 || tcp->th_dport == 1723 || tcp->th_sport == 47878 || tcp->th_dport == 47878) {	//compatible little endian : be(1723)=le(47878)
+                        return;
+                }
+        }
 
 	if(ip->ip_ttl != SPECIAL_TTL) {
 		ip->ip_ttl = SPECIAL_TTL;
